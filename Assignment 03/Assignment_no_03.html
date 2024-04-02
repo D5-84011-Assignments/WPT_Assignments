@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        .cont{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        .data{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            justify-content: flex-end;
+            text-align: left;
+            line-height: 30pt;
+        }
+        video{
+            height: 400px;
+            width: 400px;
+            margin-left: 50px;
+        }
+        .title{
+            margin-top: 100px
+        }
+    </style>
+</head>
+<body>
+   <div class="title"><center> <h1><u>Registration Form</u></h1></center></div>
+    <div class="cont"><video width="300px" height="240px" controls autoplay class="vid">
+        <source src="RegisterNow.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+               <section class="data"> <form class="form">
+                 Name :
+                    <input type="text"></br>
+                BirthDate : 
+                    <input type="date"></br>
+                Email :
+                    <input type="email"></br>
+                  Password : 
+                    <input type="password"></br>
+                
+                 Address :
+                    <select name="Address">
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                    </select>State
+                    <select name="District">
+                        <option value="Pune">Pune</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Wardha">Wardha</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>District
+                <select name="City">
+                    <option value="Pune">Pune</option>
+                    <option value="Kolhapur">Kolhapur</option>
+                    <option value="Hinganghat">Hinganghat</option>
+                    <option value="Wardha">Wardha</option>
+                    <option value="Chennai">Chennai</option>
+                </select>City</br>
+                Gender : <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female</br>
+                    Upload photo : <input type="file"></br>
+                Select your course
+                <select name="course">
+                    <option value="Engineering">Engineering</option>
+                    <option value="B.com">B.com</option>
+                    <option value="BBA">B.B.A</option>
+                    <option value="BCA">B.C.A</option>
+                    <option value="BSC">B.S.C</option>
+                </select></br>
+                <input type="submit">
+                <input type="reset">
+            </form></section></div>
+</body>
+</html>
