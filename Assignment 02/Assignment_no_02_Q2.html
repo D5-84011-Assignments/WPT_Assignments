@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>
+        Test ColSpan RowSpan
+    </title>
+    <style>
+        table,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        table {
+            height: 400px;
+            width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table>
+            <tr>
+                <td colspan="16" height=80px>A</td>
+            </tr>
+            <tr>
+                <td colspan="8" rowspan="2">B</td>
+                <td colspan="8">C</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">D</td>
+                <td colspan="4">E</td>
+
+            </tr>
+            <tr>
+                <td rowspan="3" colspan="4">F</td>
+                <td colspan="12" height="75px">G</td>
+            </tr>
+            <tr>
+                <td colspan="4" rowspan="2">H</td>
+                <td colspan="4" rowspan="2">I</td>
+                <td colspan="4">J</td>
+
+            </tr>
+            <tr>
+                <td colspan="4">K</td>
+            </tr>
+            <tr>
+                <td colspan="14" rowspan="2">L</td>
+                <td colspan="2">M</td>
+
+            </tr>
+            <tr>
+
+                <td colspan="2">N</td>
+            </tr>
+
+
+
+
+
+
+
+        </table>
+    </center>
+
+</body>
+
+</html>
