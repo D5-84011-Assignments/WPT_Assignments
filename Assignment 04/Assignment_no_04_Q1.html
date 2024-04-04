@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <center style="border-style:solid; background-color: rgb(218, 210, 230); padding: 100px; width: 350px;"  >    
+        <h1> CALCULATOR</h1>
+        <table style="height: 150px;">
+            <tbody>
+                <tr>
+                    <td>Enter Number 1:</td>
+                    <td>
+                        <input type="text" id="txtX" />
+                    </td>
+                    <td>
+                        <div id="errorMessageX" style="color: red"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Enter Number 2:</td>
+                    <td>
+                        <input type="text" id="txtY" />
+                    </td>
+                    <td>
+                        <div id="errorMessageY" style="color: red"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Result:</td>
+                    <td colspan="4">
+                        <div id="resultDiv"></div>
+                    </td>
+                </tr>
+
+                <style>
+                    #resultDiv {
+                        width: 185px;
+                        height: 20px;
+                        background-color: rgb(246, 246, 242);
+                        border: 1px solid black;
+                    }
+                </style>
+
+                <table>
+                    <tr>
+                        <td colspan="3">
+                            <input type="button" value="Addition" onclick="Add()" />
+                        </td>
+                        <td colspan="3">
+                            <input type="button" value="Substraction" onclick="Sub()" />
+                        </td>
+                        <td colspan="3">
+                            <input type="button" value="Multiplication" onclick="Mul()" />
+                        </td>
+                        <td colspan="3">
+                            <input type="button" value="Division" onclick="Div()" />
+                        </td>
+                    </tr>
+                </table>
+            </tbody>
+        </table>
+</body>
+</center>
+
+<script>
+    function Add() {
+        var refTOtxtX = document.getElementById("txtX");
+        var refTOtxtY = document.getElementById("txtY");
+        var refToresultDiv = document.getElementById("resultDiv");
+
+        var isXNumber = false;
+        var isYNumber = false;
+
+        var isXBoxEmpty = IsEmpty("txtX", "errorMessageX", "X is required");
+        if (isXBoxEmpty == false) {
+            isXNumber = IsItNumber("txtX", "errorMessageX", "X should be number");
+        }
+
+        var isYBoxEmpty = IsEmpty("txtY", "errorMessageY", "Y is required");
+        if (isYBoxEmpty == false) {
+            isYNumber = IsItNumber("txtY", "errorMessageY", "Y should be number");
+        }
+
+        if (isXNumber == true && isYNumber == true) {
+            //alert("Do addition now!");
+
+            var xData = parseFloat(refTOtxtX.value);
+            var yData = parseFloat(refTOtxtY.value);
+
+            var result = xData + yData;
+            refToresultDiv.innerText = result;
+        } else {
+            refToresultDiv.innerText = "";
+        }
+    }
+
+    function Sub() {
+        var refTOtxtX = document.getElementById("txtX");
+        var refTOtxtY = document.getElementById("txtY");
+        var refToresultDiv = document.getElementById("resultDiv");
+
+        var isXNumber = false;
+        var isYNumber = false;
+
+        var isXBoxEmpty = IsEmpty("txtX", "errorMessageX", "X is required");
+        if (isXBoxEmpty == false) {
+            isXNumber = IsItNumber("txtX", "errorMessageX", "X should be number");
+        }
+
+        var isYBoxEmpty = IsEmpty("txtY", "errorMessageY", "Y is required");
+        if (isYBoxEmpty == false) {
+            isYNumber = IsItNumber("txtY", "errorMessageY", "Y should be number");
+        }
+
+        if (isXNumber == true && isYNumber == true) {
+            //alert("Do addition now!");
+
+            var xData = parseFloat(refTOtxtX.value);
+            var yData = parseFloat(refTOtxtY.value);
+
+            var result = xData - yData;
+            refToresultDiv.innerText = result;
+        } else {
+            refToresultDiv.innerText = "";
+        }
+    }
+
+    function Mul() {
+        var refTOtxtX = document.getElementById("txtX");
+        var refTOtxtY = document.getElementById("txtY");
+        var refToresultDiv = document.getElementById("resultDiv");
+
+        var isXNumber = false;
+        var isYNumber = false;
+
+        var isXBoxEmpty = IsEmpty("txtX", "errorMessageX", "X is required");
+        if (isXBoxEmpty == false) {
+            isXNumber = IsItNumber("txtX", "errorMessageX", "X should be number");
+        }
+
+        var isYBoxEmpty = IsEmpty("txtY", "errorMessageY", "Y is required");
+        if (isYBoxEmpty == false) {
+            isYNumber = IsItNumber("txtY", "errorMessageY", "Y should be number");
+        }
+
+        if (isXNumber == true && isYNumber == true) {
+            //alert("Do addition now!");
+
+            var xData = parseFloat(refTOtxtX.value);
+            var yData = parseFloat(refTOtxtY.value);
+
+            var result = xData * yData;
+            refToresultDiv.innerText = result;
+        } else {
+            refToresultDiv.innerText = "";
+        }
+    }
+
+    function Div() {
+        var refTOtxtX = document.getElementById("txtX");
+        var refTOtxtY = document.getElementById("txtY");
+        var refToresultDiv = document.getElementById("resultDiv");
+
+        var isXNumber = false;
+        var isYNumber = false;
+
+        var isXBoxEmpty = IsEmpty("txtX", "errorMessageX", "X is required");
+        if (isXBoxEmpty == false) {
+            isXNumber = IsItNumber("txtX", "errorMessageX", "X should be number");
+        }
+
+        var isYBoxEmpty = IsEmpty("txtY", "errorMessageY", "Y is required");
+        if (isYBoxEmpty == false) {
+            isYNumber = IsItNumber("txtY", "errorMessageY", "Y should be number");
+        }
+
+        if (isXNumber == true && isYNumber == true) {
+            //alert("Do addition now!");
+
+            var xData = parseFloat(refTOtxtX.value);
+            var yData = parseFloat(refTOtxtY.value);
+
+            var result = xData / yData;
+            refToresultDiv.innerText = result;
+        } else {
+            refToresultDiv.innerText = "";
+        }
+    }
+
+
+
+    function IsItNumber(controlid, divid, errorMessage) {
+        var refToControl = document.getElementById(controlid);
+        var refToErrorControl = document.getElementById(divid);
+
+        var IsItNumber = false;
+
+        var isXValueText = isNaN(refToControl.value);
+        if (isXValueText == true) {
+            refToErrorControl.innerText = errorMessage;
+            IsItNumber = false;
+        } else {
+            refToErrorControl.innerText = "";
+            console.log(refToControl.value);
+            IsItNumber = true;
+        }
+
+        return IsItNumber;
+    }
+
+    function IsEmpty(controlid, errorcontrolid, errorMessage) {
+        var refToTxtBox = document.getElementById(controlid);
+        var refToDivForErrorMessage = document.getElementById(errorcontrolid);
+
+        var dataInTxtBox = refToTxtBox.value;
+
+        var isBoxEmpty = true;
+
+        if (dataInTxtBox != "") {
+            refToDivForErrorMessage.innerText = "";
+            console.log(dataInTxtBox);
+            isBoxEmpty = false;
+        } else {
+            refToDivForErrorMessage.innerText = errorMessage;
+            isBoxEmpty = true;
+        }
+
+        return isBoxEmpty;
+    }
+</script>
+</body>
+
+</html>
