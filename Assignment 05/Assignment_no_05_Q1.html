@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            position: absolute;
+            left: -31px;
+            top: 0px;
+        }
+
+        #buttonContainer {
+            position: absolute;
+            top: 200px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv" style="width: 200px; position: absolute; left: -31px; top: 0px">
+        <img src="car.jpeg" height="100px" width="200px" />
+    </div>
+    <div id="xPosition" style="position: absolute; bottom: 10px; left: 10px;"></div>
+    <div id="yPosition" style="position: absolute; bottom: 30px; left: 10px;"></div>
+    <div style="
+        height: 50px;
+        width: 500px;
+        background-color: black;
+        position: absolute;
+        left: 0px;
+        top: 90px;
+    "></div>
+    <div id="buttonContainer">
+        <input type="button" value="Move" onclick="Move()" />
+        <input type="button" value="Stop" onclick="Stop()" />
+    </div>
+    <script>
+        var leftVal = -31;
+        var downVal = 0;
+        var arrayOfQueues = new Array();
+        var moveDown = false;
+
+        function Move() {
+            var qNo = setInterval(KeepMoving, 100);
+            arrayOfQueues.push(qNo);
+        }
+
+        function Stop() {
+            for (var i = 0; i < arrayOfQueues.length; i++) {
+                var qToStop = arrayOfQueues[i];
+                clearInterval(qToStop);
+            }
+        }
+
+        function KeepMoving() {
+            var refTomyDiv = document.getElementById("myDiv");
+            var xPositionElem = document.getElementById("xPosition");
+            var yPositionElem = document.getElementById("yPosition");
+
+            if (refTomyDiv != null && xPositionElem != null && yPositionElem != null) {
+                xPositionElem.textContent = "X position: " + (leftVal + 31) + "px";
+                yPositionElem.textContent = "Y position: " + downVal + "px";
+
+                if (leftVal > 469 && !moveDown) {
+                    moveDown = true;
+                }
+
+                if (moveDown) {
+                    downVal += 1; // Move down
+                    refTomyDiv.style.top = downVal + "px";
+                } else {
+                    leftVal += 1; // Move right
+                    refTomyDiv.style.left = leftVal + "px";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
